@@ -1,0 +1,1 @@
+Assignment 10/e-ld=linker -llibrary -nostartfiles -nodefaultlibs -nolibc -nostdlib -e entry --entry=entry -pie -pthread -r -rdynamic -s -static -static-pie

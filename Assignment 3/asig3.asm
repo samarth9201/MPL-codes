@@ -7,7 +7,7 @@ msg2: db "Enter a Number : "
 l1: equ $-msg2
 msg3: db "Exiting :",0x0A
 l2: equ $-msg3
-cnt: db 4
+cnt: db 4H
 temp1: db 0
 val: db 10
 

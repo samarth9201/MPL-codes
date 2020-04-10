@@ -5,6 +5,9 @@ msg2: db "Factorial is (Non-Recursive) : ",0x0A
 len2: equ $-msg2
 msg3: db "Factorial is (Recursive) : ",0x0A
 len3: equ $-msg3
+msg4: db "Factorial is : ",0x0A
+      db "0001",0x0A
+len4: equ $-msg4
 cnt: db 2
 val: db 10
 
@@ -27,9 +30,6 @@ section .text
 global main
 main:
 
-;scall 1,1,msg1,len1
-;scall 0,1,num,3
-
 pop rbx
 pop rbx
 pop rbx
@@ -37,8 +37,8 @@ pop rbx
 mov rax,qword[rbx]
 mov qword[num],rax
 
-scall 1,1,num,2
-;mov bx,word[num]
+cmp word[num],3030H
+je zero
 
 call AtoH
 
@@ -57,6 +57,12 @@ call factR
 mov edx,eax
 call HtoA
 
+jmp exit
+
+zero:
+scall 1,1,msg4,len4
+
+exit:
 
 mov rax,60
 mov rdi,0

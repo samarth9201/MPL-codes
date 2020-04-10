@@ -10,7 +10,7 @@ val: db 10
 
 section .bss
 result: resb 10
-num: resb 3
+num: resb 10
 temp: resb 3
 
 %macro scall 4
@@ -27,10 +27,18 @@ section .text
 global main
 main:
 
-scall 1,1,msg1,len1
-scall 0,1,num,3
+;scall 1,1,msg1,len1
+;scall 0,1,num,3
 
-mov bx,word[num]
+pop rbx
+pop rbx
+pop rbx
+
+mov rax,qword[rbx]
+mov qword[num],rax
+
+scall 1,1,num,2
+;mov bx,word[num]
 
 call AtoH
 

@@ -138,11 +138,11 @@ ret
 do_calc:
 
 push rbx
-dec bl
+dec bx
 
 call factR
 
 pop rbx
-mul bl
+mul bx
 
 ret

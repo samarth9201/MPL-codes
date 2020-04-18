@@ -73,6 +73,7 @@ dec byte[noofPasses]
 
 jnz loop2
 
+scall 1,1,val,1
 scall 1,1,msg2,len2
 scall 1,1,buffer,length
 scall 1,[fd],buffer,14
@@ -103,9 +104,11 @@ dec byte[noofPasses]
 
 jnz loop4
 
+scall 1,1,val,1
 scall 1,1,msg3,len3
 scall 1,1,buffer,length
 scall 1,[fd],buffer,14
+scall 1,1,val,1
 
 mov rax,60
 mov rdi,0
